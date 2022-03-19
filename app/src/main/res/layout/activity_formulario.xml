@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="modelo"
+            type="com.example.todolist.viewmodel.FormularioViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.FormularioActivity"
+        android:padding="4dp">
+
+        <EditText
+            android:id="@+id/etTitulo"
+            android:hint="@string/titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@={modelo.titulo}"
+            />
+
+        <EditText
+            android:id="@+id/etDescripcion"
+            android:hint="@string/descripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etTitulo"
+            android:layout_marginTop="4dp"
+            android:text="@={modelo.descripcion}"
+            />
+
+        <EditText
+            android:id="@+id/etFechalimite"
+            android:hint="@string/fechalimite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etDescripcion"
+            android:layout_marginTop="4dp"
+            android:text="@={modelo.fechalimite}"
+            android:inputType="date"
+            />
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:text="@string/guardar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etFechalimite"
+            android:layout_marginTop="16dp"
+            android:onClick="@{()->modelo.guardarTarea()}"
+            />
+
+        <LinearLayout
+            android:id="@+id/LinearEditar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etFechalimite"
+            android:layout_marginTop="16dp"
+            android:gravity="center_horizontal"
+            android:visibility="gone">
+
+            <Button
+                android:id="@+id/btnEditar"
+                android:text="@string/guardar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="4dp"
+                android:onClick="@{()->modelo.actualizarTarea()}"
+                />
+            <Button
+                android:id="@+id/btnEliminar"
+                android:text="@string/eliminar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                />
+
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

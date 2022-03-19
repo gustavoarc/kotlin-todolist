@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ToDolist</string>
+    <string name="buscar_tareas">Buscar tareas</string>
+    <string name="titulo">Titulo</string>
+    <string name="descripcion">Descripcion</string>
+    <string name="fechalimite">Fecha limite</string>
+    <string name="guardar">Guardar</string>
+    <string name="eliminar">Eliminar</string>
+    <string name="borrartarea">¿Borrar Tarea?</string>
+    <string name="yes">Si, borrar</string>
+    <string name="cancel">Cancelar</string>
+
+</resources>
